@@ -1,7 +1,0 @@
-__pycache__/
-*.pyc
-instance/*.db
-instance/*.db-wal
-instance/*.db-shm
-.env
-.venv/
