@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سامانه مدیریت مدرسه سمپاد شهید مدنی</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏫%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive-print.css">
+</head>
+<body>
+<div id="app"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+<script src="js/core/config.js" defer></script>
+<script src="js/core/constants.js" defer></script>
+<script src="js/core/state.js" defer></script>
+<script src="js/core/utils.js" defer></script>
+<script src="js/core/validation.js" defer></script>
+<script src="js/core/scoping.js" defer></script>
+<script src="js/ui/toast-theme.js" defer></script>
+<script src="js/ui/html-helpers.js" defer></script>
+<script src="js/ui/pagination.js" defer></script>
+<script src="js/ui/image-upload.js" defer></script>
+<script src="js/ui/modal.js" defer></script>
+<script src="js/services/audit.js" defer></script>
+<script src="js/services/spreadsheet.js" defer></script>
+<script src="js/services/offline-auth.js" defer></script>
+<script src="js/services/offline-seed.js" defer></script>
+<script src="js/services/api.js" defer></script>
+<script src="js/services/read-state.js" defer></script>
+<script src="js/services/sync.js" defer></script>
+<script src="js/services/storage.js" defer></script>
+<script src="js/services/realtime.js" defer></script>
+<script src="js/core/attendance-calc.js" defer></script>
+<script src="js/core/announcements.js" defer></script>
+<script src="js/views/registry.js" defer></script>
+<script src="js/views/account.js" defer></script>
+<script src="js/views/announcements.js" defer></script>
+<script src="js/views/attendance.js" defer></script>
+<script src="js/views/audit.js" defer></script>
+<script src="js/views/calendar.js" defer></script>
+<script src="js/views/chat.js" defer></script>
+<script src="js/views/classes.js" defer></script>
+<script src="js/views/dash.js" defer></script>
+<script src="js/views/discipline.js" defer></script>
+<script src="js/views/events.js" defer></script>
+<script src="js/views/finance.js" defer></script>
+<script src="js/views/grades.js" defer></script>
+<script src="js/views/homework.js" defer></script>
+<script src="js/views/leaves.js" defer></script>
+<script src="js/views/messages.js" defer></script>
+<script src="js/views/news.js" defer></script>
+<script src="js/views/online.js" defer></script>
+<script src="js/views/poll.js" defer></script>
+<script src="js/views/quiz.js" defer></script>
+<script src="js/views/report-card.js" defer></script>
+<script src="js/views/settings.js" defer></script>
+<script src="js/views/students.js" defer></script>
+<script src="js/views/timetable.js" defer></script>
+<script src="js/views/users.js" defer></script>
+<script src="js/views/shared/account-cards.js" defer></script>
+<script src="js/views/shared/event-card-mini.js" defer></script>
+<script src="js/views/shared/polls-block.js" defer></script>
+<script src="js/views/provereshi/index.js" defer></script>
+<script src="js/views/provereshi/attendance-tab.js" defer></script>
+<script src="js/views/provereshi/coupon-tab.js" defer></script>
+<script src="js/views/provereshi/events-tab.js" defer></script>
+<script src="js/views/provereshi/report-tab.js" defer></script>
+<script src="js/views/provereshi/types-tab.js" defer></script>
+<script src="js/views/provereshi/vote-tab.js" defer></script>
+<script src="js/actions/registry.js" defer></script>
+<script src="js/actions/auth.js" defer></script>
+<script src="js/actions/account.js" defer></script>
+<script src="js/actions/announcements.js" defer></script>
+<script src="js/actions/attendance.js" defer></script>
+<script src="js/actions/calendar.js" defer></script>
+<script src="js/actions/chat.js" defer></script>
+<script src="js/actions/classes.js" defer></script>
+<script src="js/actions/discipline.js" defer></script>
+<script src="js/actions/finance.js" defer></script>
+<script src="js/actions/general.js" defer></script>
+<script src="js/actions/grades.js" defer></script>
+<script src="js/actions/homework.js" defer></script>
+<script src="js/actions/leaves.js" defer></script>
+<script src="js/actions/messages.js" defer></script>
+<script src="js/actions/online.js" defer></script>
+<script src="js/actions/polls.js" defer></script>
+<script src="js/actions/provereshi.js" defer></script>
+<script src="js/actions/qr.js" defer></script>
+<script src="js/actions/quiz.js" defer></script>
+<script src="js/actions/report-card.js" defer></script>
+<script src="js/actions/search.js" defer></script>
+<script src="js/actions/settings.js" defer></script>
+<script src="js/actions/showcase.js" defer></script>
+<script src="js/actions/students.js" defer></script>
+<script src="js/actions/timetable.js" defer></script>
+<script src="js/actions/ui-extras.js" defer></script>
+<script src="js/actions/user-admin.js" defer></script>
+<script src="js/actions/users.js" defer></script>
+<script src="js/features/global-search.js" defer></script>
+<script src="js/features/notifications.js" defer></script>
+<script src="js/ui/edit-form.js" defer></script>
+<script src="js/ui/qr-code.js" defer></script>
+<script src="js/app/events.js" defer></script>
+<script src="js/app/login-screens.js" defer></script>
+<script src="js/app/render.js" defer></script>
+<script src="js/app/init.js" defer></script>
+</body>
+</html>
