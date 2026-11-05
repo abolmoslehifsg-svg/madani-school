@@ -1,0 +1,26 @@
+/* ---------- Print ---------- */
+@media print{
+  header,nav,.np,.pager,.theme-btn,.draft-bar,.b,button,.notif-btn,.notif-panel{display:none!important}
+  .wrap{display:block;padding:0;max-width:none}
+  body{background:#fff;color:#000;font-size:12px}
+  .card{box-shadow:none;border:0;padding:0;margin:0}
+  .report-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+  .stats{display:none}
+  .ev-card{break-inside:avoid;box-shadow:none}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  .wrap{grid-template-columns:1fr;padding:12px}
+  nav{position:static;display:flex;overflow-x:auto;gap:6px;padding:8px;max-height:none}
+  nav a{white-space:nowrap;padding:8px 12px}
+  nav hr{display:none}
+  header{padding:10px 12px}
+  .who .np{display:none}
+  .chat-wrap{grid-template-columns:1fr;height:auto}
+  .chat-list{max-height:200px}
+  .chat-box{height:60vh}
+  .tabs{overflow-x:auto}
+  .cal-cell{min-height:64px;font-size:10.5px;padding:5px}
+  .notif-panel{top:60px;width:96vw}
+}
